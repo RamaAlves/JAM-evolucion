@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7welckr4voo8"]
+[gd_scene load_steps=4 format=3 uid="uid://c7welckr4voo8"]
 
+[ext_resource type="PackedScene" uid="uid://c5xqv7eh1f3ar" path="res://Prefabs/Items/power_evolution.tscn" id="1_5uxj7"]
 [ext_resource type="PackedScene" uid="uid://my1hs1ufupex" path="res://Prefabs/player.tscn" id="1_bjgvl"]
 [ext_resource type="Texture2D" uid="uid://cotk08o6yq1hq" path="res://icon.svg" id="2_thqiu"]
 
 [node name="Level0" type="Node2D"]
+
+[node name="PowerEvolution" parent="." instance=ExtResource("1_5uxj7")]
+position = Vector2(637, 387)
+tipoItem = 0
 
 [node name="Player" parent="." instance=ExtResource("1_bjgvl")]
 

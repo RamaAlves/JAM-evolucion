@@ -40,3 +40,41 @@ func dir_input(direction:Vector2) -> Vector2:
 		#t_standby.start()
 		#sprite_sit = false
 	return direction
+
+func aplicarEvolucion(evolucion:String):
+	match evolucion:
+		"pajaro":
+			#el player se transforma
+			setPajaro()
+			pass
+		"cocodrilo":
+			#el player se transforma
+			setCocodrilo()
+			pass
+		"jirafa":
+			#el player se transforma
+			setJirafa()
+			pass
+		"rino":
+			#el player se transforma
+			setRino()
+			pass
+		"canguro":
+			setCanguro()
+			#el player se transforma
+			pass
+		_:
+			pass
+
+#-----------------> Seteo de evoluciones
+
+func setPajaro():
+	pass
+func setCocodrilo():
+	pass
+func setJirafa():
+	pass
+func setRino():
+	pass
+func setCanguro():
+	pass
