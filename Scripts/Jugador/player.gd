@@ -1,11 +1,9 @@
 extends CharacterBody2D
 
-const JUMP_VELOCITY = -400.0
-
-
-@export var vel= Vector2(0,1.0)
+@export var vel= Vector2(0,5.0)
 
 var mov=Vector2.ZERO
+var izq=false
 
 
 func _physics_process(_delta):
@@ -30,12 +28,16 @@ func direction_input() -> Vector2:
 
 func dir_input(direction:Vector2) -> Vector2:
 	if Input.is_action_just_pressed("ui_left"):
-		direction.x = -20
+		if !izq:
+			direction.x = -500
+			izq=true
 		#$soundWalk.play()
 		#t_standby.start()
 		#sprite_sit = false
-	elif Input.is_action_just_pressed("ui_right"): 
-		direction.x = 20
+	elif Input.is_action_just_pressed("ui_right"):
+		if izq:
+			direction.x = 500
+			izq=false
 		#$soundWalk.play()
 		#t_standby.start()
 		#sprite_sit = false

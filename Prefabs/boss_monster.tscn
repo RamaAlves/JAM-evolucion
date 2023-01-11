@@ -1,0 +1,436 @@
+[gd_scene load_steps=20 format=3 uid="uid://dq3i21nphrx4c"]
+
+[ext_resource type="Texture2D" uid="uid://x4eskx6sao31" path="res://Resource/Boss/boss_00.png" id="1_khtkf"]
+[ext_resource type="Script" path="res://Scripts/Boss/boss_monster.gd" id="1_qmt8t"]
+[ext_resource type="Texture2D" uid="uid://bc2jjrii1vpyj" path="res://Resource/Boss/boss_01.png" id="3_r7686"]
+[ext_resource type="Texture2D" uid="uid://btqd7n8pcn0et" path="res://Resource/Boss/boss_02.png" id="4_vdmev"]
+[ext_resource type="Texture2D" uid="uid://ctm3dy3arwpcg" path="res://Resource/Ambiente/particles.png" id="5_n38gy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fymn"]
+size = Vector2(948, 508)
+
+[sub_resource type="Animation" id="Animation_617lq"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss01Skeleton2D/root/T01_Bone0:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-0.563583, -199.423), Vector2(87.6209, -193.625), Vector2(1.83369, -230.955), Vector2(-0.563583, -199.423)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Boss01Skeleton2D/root/T01_Bone0/T01_Bone1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(82.2758, -114.091), Vector2(30.8643, -96.79), Vector2(84.8126, -77.1029), Vector2(82.2758, -114.091)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Boss01Skeleton2D/root/T01_Bone0/T01_Bone1/T01_Bone2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(5.11395, -97.8716), Vector2(-28.7185, -45.1892), Vector2(34.1643, -41.9087), Vector2(5.11395, -97.8716)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Boss01Skeleton2D/root/T01_Bone0:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.13439, 0.0663225, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Boss01Skeleton2D/root/T01_Bone0/T01_Bone1:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.13439, 0.0663225, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Boss01Skeleton2D/root/T01_Bone0/T01_Bone1/T01_Bone2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.241106, -0.106465, 0.0279253, -0.241106]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_75uw5"]
+_data = {
+"idle": SubResource("Animation_617lq")
+}
+
+[sub_resource type="Animation" id="Animation_bv4tq"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Boss02Skeleton2D/root/T02_Bone0:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(151, -135), Vector2(173.756, -146.433), Vector2(115.248, -133.44), Vector2(151, -135)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Boss02Skeleton2D/root/T02_Bone0:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0872665, 0.0436332, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Boss02Skeleton2D/root/T02_Bone0/T02_Bone1:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.13439, 0.00174533, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Boss02Skeleton2D/root/T02_Bone0/T02_Bone1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-160, -184), Vector2(-188.666, -128.18), Vector2(-143.546, -215.361), Vector2(-160, -184)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qmwg7"]
+_data = {
+"idle": SubResource("Animation_bv4tq")
+}
+
+[sub_resource type="Animation" id="Animation_55u4a"]
+resource_name = "Idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DamageZone/Tentacle00/Boss00Skeleton2D/root/Bone2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.01, 2.01, 3.01),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(75, -214), Vector2(3, -261), Vector2(82, -227), Vector2(75, -214)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DamageZone/Tentacle00/Boss00Skeleton2D/root/Bone2D/Bone2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-184, -157), Vector2(-103, -164), Vector2(-238, -176), Vector2(-184, -157)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DamageZone/Tentacle00/Boss00Skeleton2D/root/Bone2D/Bone2D2/Bone2D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7, 2.1, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(278, -126), Vector2(256.7, -144.2), Vector2(301.3, -138.2), Vector2(278, -126)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DamageZone/Tentacle00/Boss00Skeleton2D/root/Bone2D/Bone2D2/Bone2D3/Bone2D4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-55, -102), Vector2(-66, -39), Vector2(-49.4546, -115.818), Vector2(-55, -102)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hvnto"]
+_data = {
+"Idle": SubResource("Animation_55u4a")
+}
+
+[sub_resource type="Curve" id="Curve_o1bg3"]
+min_value = -22.26
+_data = [Vector2(0, -6.54544), 0.0, 0.0, 0, 0, Vector2(0.971591, -11.6873), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6t8rj"]
+curve = SubResource("Curve_o1bg3")
+
+[sub_resource type="Gradient" id="Gradient_2xxfd"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nl6fs"]
+gradient = SubResource("Gradient_2xxfd")
+
+[sub_resource type="Curve" id="Curve_duohc"]
+_data = [Vector2(0, 0.609091), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rx61v"]
+curve = SubResource("Curve_duohc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cfov5"]
+lifetime_randomness = 0.5
+emission_shape = 3
+emission_box_extents = Vector3(150, 1, 1)
+direction = Vector3(0, -20, 0)
+gravity = Vector3(0, -100, 0)
+angle_max = 20.0
+angle_curve = SubResource("CurveTexture_6t8rj")
+scale_curve = SubResource("CurveTexture_rx61v")
+color_ramp = SubResource("GradientTexture1D_nl6fs")
+
+[node name="BossMonster" type="CharacterBody2D"]
+z_index = 120
+z_as_relative = false
+position = Vector2(234, 334)
+collision_layer = 0
+script = ExtResource("1_qmt8t")
+
+[node name="DamageZone" type="CollisionShape2D" parent="."]
+position = Vector2(40, -16)
+shape = SubResource("RectangleShape2D_0fymn")
+metadata/_edit_group_ = true
+
+[node name="Tentacle01" type="Node2D" parent="DamageZone"]
+position = Vector2(-12, 0)
+
+[node name="Boss01" type="Polygon2D" parent="DamageZone/Tentacle01"]
+position = Vector2(-615, -219)
+rotation = -0.165306
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_r7686")
+skeleton = NodePath("../Boss01Skeleton2D")
+polygon = PackedVector2Array(661.035, 1083.33, 686.035, 991.667, 607.702, 846.667, 552.702, 768.333, 559.368, 686.667, 619.368, 568.333, 711.035, 393.333, 744.368, 276.667, 724.368, 176.667, 614.368, 65, 459.368, -10, 341.035, 51.6667, 272.702, 113.333, 247.702, 206.667, 282.702, 291.667, 339.368, 345, 384.368, 351.667, 307.702, 411.667, 269.368, 481.667, 277.702, 550, 309.368, 556.667, 241.035, 678.333, 222.702, 821.667, 237.702, 911.667, 277.702, 980, 302.702, 1093.33, 386.035, 1146.67, 547.702, 1168.33, 657.702, 1125)
+uv = PackedVector2Array(664.368, 1088.33, 686.035, 991.667, 607.702, 846.667, 552.702, 768.333, 559.368, 686.667, 619.368, 568.333, 711.035, 393.333, 744.368, 276.667, 724.368, 176.667, 614.368, 65, 459.368, -10, 341.035, 51.6667, 272.702, 113.333, 247.702, 206.667, 282.702, 291.667, 339.368, 345, 384.368, 351.667, 307.702, 411.667, 269.368, 481.667, 277.702, 550, 309.368, 556.667, 241.035, 678.333, 222.702, 821.667, 237.702, 911.667, 277.702, 980, 302.702, 1093.33, 386.035, 1146.67, 547.702, 1168.33, 657.702, 1125)
+bones = ["root", PackedFloat32Array(0.68, 0.68, 0.68, 0.68, 0.18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.68, 0.68, 0.68, 0.68, 0.68, 0.68, 0.68, 0.68), "root/T01_Bone0", PackedFloat32Array(0, 0, 0, 0, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0), "root/T01_Bone0/T01_Bone1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/T01_Bone0/T01_Bone1/T01_Bone2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Boss01Skeleton2D" type="Skeleton2D" parent="DamageZone/Tentacle01"]
+visible = false
+position = Vector2(-385, 86.1763)
+rotation = -0.165306
+
+[node name="root" type="Bone2D" parent="DamageZone/Tentacle01/Boss01Skeleton2D"]
+position = Vector2(222, 531)
+rotation = -0.062408
+scale = Vector2(1, 1)
+rest = Transform2D(0.998053, -0.0623675, 0.0623675, 0.998053, 222, 531)
+auto_calculate_length_and_angle = false
+length = 200.0
+bone_angle = -74.483
+
+[node name="T01_Bone0" type="Bone2D" parent="DamageZone/Tentacle01/Boss01Skeleton2D/root"]
+position = Vector2(63.4922, -204.124)
+rotation = -0.0779373
+scale = Vector2(0.999999, 0.999999)
+rest = Transform2D(1, 0, 0, 1, -0.563583, -199.423)
+auto_calculate_length_and_angle = false
+length = 192.379
+bone_angle = -142.758
+
+[node name="T01_Bone1" type="Bone2D" parent="DamageZone/Tentacle01/Boss01Skeleton2D/root/T01_Bone0"]
+position = Vector2(46.0379, -91.2527)
+rotation = -0.0779373
+scale = Vector2(0.999999, 0.999999)
+rest = Transform2D(1, 0, 0, 1, 82.2758, -114.091)
+auto_calculate_length_and_angle = false
+length = 192.379
+bone_angle = -24.827
+
+[node name="T01_Bone2" type="Bone2D" parent="DamageZone/Tentacle01/Boss01Skeleton2D/root/T01_Bone0/T01_Bone1"]
+position = Vector2(-11.0319, -44.2665)
+rotation = -0.0686661
+scale = Vector2(0.999999, 0.999999)
+rest = Transform2D(1, 0, 0, 1, 5.11395, -97.8716)
+auto_calculate_length_and_angle = false
+length = 95.37
+bone_angle = -117.931
+
+[node name="AnimationTentacle1" type="AnimationPlayer" parent="DamageZone/Tentacle01"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_75uw5")
+}
+
+[node name="Tentacle02" type="Node2D" parent="DamageZone"]
+z_index = 114
+z_as_relative = false
+position = Vector2(-45, 48)
+
+[node name="Boss02Skeleton2D" type="Skeleton2D" parent="DamageZone/Tentacle02"]
+position = Vector2(62.0001, -311.941)
+rotation = -0.230191
+
+[node name="root" type="Bone2D" parent="DamageZone/Tentacle02/Boss02Skeleton2D"]
+position = Vector2(177, 508)
+rest = Transform2D(1, 0, 0, 1, 177, 508)
+auto_calculate_length_and_angle = false
+length = 200.0
+bone_angle = -74.483
+
+[node name="T02_Bone0" type="Bone2D" parent="DamageZone/Tentacle02/Boss02Skeleton2D/root"]
+position = Vector2(149.176, -140.975)
+rotation = 0.0689356
+scale = Vector2(0.999999, 0.999999)
+rest = Transform2D(1, 0, 0, 1, 151, -135)
+auto_calculate_length_and_angle = false
+length = 192.379
+bone_angle = -142.758
+
+[node name="T02_Bone1" type="Bone2D" parent="DamageZone/Tentacle02/Boss02Skeleton2D/root/T02_Bone0"]
+position = Vector2(-169.71, -164.806)
+rotation = 0.0786645
+scale = Vector2(0.999999, 0.999999)
+rest = Transform2D(1, 0, 0, 1, -160, -184)
+auto_calculate_length_and_angle = false
+length = 192.379
+bone_angle = -37.241
+
+[node name="Boss02Polygon2D" type="Polygon2D" parent="DamageZone/Tentacle02"]
+position = Vector2(292, 3.05853)
+rotation = -0.239282
+scale = Vector2(1, 1)
+offset = Vector2(-730.871, -793.707)
+texture = ExtResource("4_vdmev")
+skeleton = NodePath("../Boss02Skeleton2D")
+polygon = PackedVector2Array(670.813, 1060.27, 675.291, 1079.68, 778.276, 1043.86, 894.694, 903.558, 890.216, 815.498, 818.575, 725.946, 739.47, 708.036, 727.53, 687.14, 809.619, 643.857, 855.888, 588.633, 839.47, 522.961, 802.157, 499.081, 779.769, 518.484, 800.664, 543.857, 793.202, 563.26, 746.933, 582.663, 673.798, 600.573, 642.455, 627.439, 593.202, 691.618, 573.095, 738.334, 567.31, 789.573, 590.216, 825.946, 606.487, 834.504, 681.593, 854.448, 729.022, 858.782, 680.164, 885.493, 659.377, 850.503, 632.21, 843.175, 579.184, 830.954, 621.56, 906.543, 640.963, 951.319)
+uv = PackedVector2Array(670.813, 1060.27, 675.291, 1079.68, 778.276, 1043.86, 894.694, 903.558, 890.216, 815.498, 818.575, 725.946, 739.47, 708.036, 727.53, 687.14, 809.619, 643.857, 855.888, 588.633, 839.47, 522.961, 802.157, 499.081, 779.769, 518.484, 800.664, 543.857, 793.202, 563.26, 746.933, 582.663, 673.798, 600.573, 642.455, 627.439, 593.202, 691.618, 584.246, 742.364, 581.261, 796.096, 590.216, 825.946, 614.097, 836.394, 681.261, 855.797, 729.022, 858.782, 702.157, 882.663, 675.291, 885.648, 639.47, 848.334, 594.694, 851.319, 621.56, 906.543, 640.963, 951.319)
+bones = ["root", PackedFloat32Array(0.68, 0.68, 0.68, 0.68, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.68, 0.68, 0.68, 1, 0.68, 0.68), "root/T02_Bone0", PackedFloat32Array(0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0), "root/T02_Bone0/T02_Bone1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="AnimationTentacle2" type="AnimationPlayer" parent="DamageZone/Tentacle02"]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_qmwg7")
+}
+
+[node name="Tentacle00" type="Node2D" parent="DamageZone"]
+
+[node name="Boss00" type="Polygon2D" parent="DamageZone/Tentacle00"]
+z_index = 118
+z_as_relative = false
+position = Vector2(-256, -341)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_khtkf")
+skeleton = NodePath("../Boss00Skeleton2D")
+polygon = PackedVector2Array(744.611, 1256.52, 864.176, 1134.78, 890.263, 1097.83, 898.959, 954.348, 885.915, 873.913, 794.611, 734.783, 721.471, 638.776, 512.002, 560.87, 427.22, 552.174, 412.002, 482.609, 446.785, 482.609, 594.611, 454.348, 716.35, 430.435, 853.307, 328.261, 892.437, 234.783, 879.393, 160.87, 812.002, 65.2174, 679.393, -4.34782, 583.741, 2.17392, 509.828, 73.9131, 498.959, 163.043, 518.524, 195.652, 540.263, 215.217, 548.959, 141.304, 577.22, 110.87, 648.959, 113.043, 675.046, 132.609, 664.176, 182.609, 638.089, 206.522, 596.785, 226.087, 544.611, 226.087, 525.046, 236.957, 455.48, 239.13, 379.393, 239.13, 153.307, 306.522, 42.4369, 369.565, 1.13257, 436.957, 5.48047, 543.478, 12.0022, 652.174, 46.7848, 704.348, 109.828, 797.826, 188.089, 884.783, 279.393, 934.783, 350.043, 975.51, 353.307, 1056.52, 253.307, 1147.83, 253.307, 1193.48, 370.698, 1232.61, 503.307, 1247.83, 607.654, 1258.7)
+uv = PackedVector2Array(744.611, 1256.52, 864.176, 1134.78, 890.263, 1097.83, 898.959, 954.348, 885.915, 873.913, 794.611, 734.783, 721.471, 638.776, 512.002, 560.87, 427.22, 552.174, 412.002, 482.609, 446.785, 482.609, 594.611, 454.348, 716.35, 430.435, 853.307, 328.261, 892.437, 234.783, 879.393, 160.87, 812.002, 65.2174, 679.393, -4.34782, 583.741, 2.17392, 509.828, 73.9131, 498.959, 163.043, 518.524, 195.652, 540.263, 215.217, 548.959, 141.304, 577.22, 110.87, 648.959, 113.043, 675.046, 132.609, 664.176, 182.609, 638.089, 206.522, 596.785, 226.087, 544.611, 226.087, 525.046, 236.957, 455.48, 239.13, 379.393, 239.13, 153.307, 306.522, 42.4369, 369.565, 1.13257, 436.957, 5.48047, 543.478, 12.0022, 652.174, 46.7848, 704.348, 109.828, 797.826, 188.089, 884.783, 279.393, 934.783, 350.043, 975.51, 353.307, 1056.52, 253.307, 1147.83, 253.307, 1193.48, 370.698, 1232.61, 503.307, 1247.83, 607.654, 1258.7)
+bones = ["root", PackedFloat32Array(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5), "root/Bone2D", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 1, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 0, 0, 0, 0, 0, 0, 0), "root/Bone2D/Bone2D2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0.4, 0.4, 0.4, 0.64, 0.36, 0.68, 0, 0, 0, 0, 0, 0, 0, 0.24, 0, 0, 0, 0, 1, 1, 0.36, 0.36, 0.36, 0.36, 0.5, 0.5, 0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/Bone2D/Bone2D2/Bone2D3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.68, 0.68, 0.68, 0.68, 0, 0, 0, 0, 0, 0, 0, 0.68, 0.68, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "root/Bone2D/Bone2D2/Bone2D3/Bone2D4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.68, 0.68, 0.68, 0.68, 0.68, 0.68, 0.68, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Boss00Skeleton2D" type="Skeleton2D" parent="DamageZone/Tentacle00"]
+visible = false
+z_index = 119
+z_as_relative = false
+
+[node name="root" type="Bone2D" parent="DamageZone/Tentacle00/Boss00Skeleton2D"]
+position = Vector2(216, 610)
+rest = Transform2D(1, 0, 0, 1, 216, 610)
+auto_calculate_length_and_angle = false
+length = 200.0
+bone_angle = -74.483
+
+[node name="Bone2D" type="Bone2D" parent="DamageZone/Tentacle00/Boss00Skeleton2D/root"]
+position = Vector2(76.3967, -216.594)
+rest = Transform2D(1, 0, 0, 1, 75, -214)
+auto_calculate_length_and_angle = false
+length = 192.379
+bone_angle = -142.758
+
+[node name="Bone2D2" type="Bone2D" parent="DamageZone/Tentacle00/Boss00Skeleton2D/root/Bone2D"]
+position = Vector2(-194.666, -160.753)
+rest = Transform2D(1, 0, 0, 1, -184, -157)
+auto_calculate_length_and_angle = false
+length = 192.379
+bone_angle = -24.827
+
+[node name="Bone2D3" type="Bone2D" parent="DamageZone/Tentacle00/Boss00Skeleton2D/root/Bone2D/Bone2D2"]
+position = Vector2(283.114, -128.678)
+rest = Transform2D(1, 0, 0, 1, 278, -126)
+auto_calculate_length_and_angle = false
+length = 68.913
+bone_angle = -99.31
+
+[node name="Bone2D4" type="Bone2D" parent="DamageZone/Tentacle00/Boss00Skeleton2D/root/Bone2D/Bone2D2/Bone2D3"]
+position = Vector2(-53.9046, -104.729)
+rest = Transform2D(1, 0, 0, 1, -55, -102)
+auto_calculate_length_and_angle = false
+length = 68.913
+bone_angle = -204.827
+
+[node name="AnimationTentacle0" type="AnimationPlayer" parent="DamageZone/Tentacle00"]
+root_node = NodePath("../../..")
+autoplay = "Idle"
+libraries = {
+"": SubResource("AnimationLibrary_hvnto")
+}
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="DamageZone"]
+position = Vector2(-22, 242)
+scale = Vector2(3, 3)
+amount = 300
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_cfov5")
+texture = ExtResource("5_n38gy")
+lifetime = 3.0
+speed_scale = 0.4
+randomness = 1.0
+fixed_fps = 60
