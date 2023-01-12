@@ -273,7 +273,6 @@ rotation = -0.165306
 [node name="root" type="Bone2D" parent="DamageZone/Tentacle01/Boss01Skeleton2D"]
 position = Vector2(222, 531)
 rotation = -0.062408
-scale = Vector2(1, 1)
 rest = Transform2D(0.998053, -0.0623675, 0.0623675, 0.998053, 222, 531)
 auto_calculate_length_and_angle = false
 length = 200.0
@@ -349,7 +348,6 @@ bone_angle = -37.241
 [node name="Boss02Polygon2D" type="Polygon2D" parent="DamageZone/Tentacle02"]
 position = Vector2(292, 3.05853)
 rotation = -0.239282
-scale = Vector2(1, 1)
 offset = Vector2(-730.871, -793.707)
 texture = ExtResource("4_vdmev")
 skeleton = NodePath("../Boss02Skeleton2D")
@@ -424,6 +422,7 @@ libraries = {
 }
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="DamageZone"]
+visible = false
 position = Vector2(-22, 242)
 scale = Vector2(3, 3)
 amount = 300

@@ -9,8 +9,12 @@
 [node name="Level0" type="Node2D"]
 
 [node name="PowerEvolution" parent="." instance=ExtResource("1_5uxj7")]
-position = Vector2(637, 387)
+position = Vector2(756, -226)
 tipoItem = 0
+
+[node name="PowerEvolution2" parent="." instance=ExtResource("1_5uxj7")]
+position = Vector2(254, -237)
+tipoItem = 1
 
 [node name="Player" parent="." instance=ExtResource("1_bjgvl")]
 z_index = 100
