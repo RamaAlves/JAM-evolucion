@@ -2,7 +2,7 @@ extends Area2D
 
 @export var tipo=0
 
-var tipo_obstaculo=["base","rio_lava","lago_congelado","pasto_alto","agua","muro","valla"]
+var tipo_obstaculo=["base","rio_lava","lago_congelado","agua","muro"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,13 +23,9 @@ func getObstaculo(obstaculo:String):
 			pass
 		"lago_congelado":
 			pass
-		"pasto_alto":
-			pass
 		"agua":
 			pass
 		"muro":
-			pass
-		"valla":
 			pass
 		_:
 			pass

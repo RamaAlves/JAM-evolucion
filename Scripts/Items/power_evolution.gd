@@ -4,7 +4,7 @@ extends Area2D
 @export var tipoItem = 0
 
 #------------------> Variables locales
-var tipos =["pajaro","cocodrilo","jirafa","rino","canguro"]
+var tipos =["hielo","piedra","agua","fuego"]
 
 #-------------------> Variables onready
 @onready var sprites= $Sprite2D
@@ -23,15 +23,13 @@ func obtenerPoder(poder:String):
 	var img ="res://Resource/Items/frasco"+str(tipoItem)+"-1.png"
 	sprites.texture=load(img)
 	match poder:
-		"pajaro":
+		"hielo":
 			pass
-		"cocodrilo":
+		"piedra":
 			pass
-		"jirafa":
+		"agua":
 			pass
-		"rino":
-			pass
-		"canguro":
+		"fuego":
 			pass
 		_:
 			pass
