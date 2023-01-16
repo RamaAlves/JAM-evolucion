@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b4u7wmr6sy5ko" path="res://Resource/Ambiente/road.png" id="1_2p4qw"]
 [ext_resource type="Texture2D" uid="uid://bfg1uldrrmq7l" path="res://Resource/Menu/musicOn.png" id="1_j7sr3"]
 [ext_resource type="Texture2D" uid="uid://d1qifmjg7mdf5" path="res://Resource/Menu/musicOff.png" id="2_ydy2a"]
-[ext_resource type="Texture2D" uid="uid://dh58hsgq27wgg" path="res://Resource/Menu/trophy.png" id="3_fjqx0"]
+[ext_resource type="Texture2D" uid="uid://dqj7x738u3ad" path="res://Resource/Items/frasco0-1.png" id="4_nu1i8"]
 
 [sub_resource type="GDScript" id="GDScript_nrgvv"]
 script/source = "extends Control
@@ -11,6 +11,7 @@ script/source = "extends Control
 @export var level_1= \"\"
 
 @onready var street= $ParallaxBackground2/ParallaxLayer
+@onready var street2= $ParallaxBackground2/ParallaxLayer2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,6 +23,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	street.motion_offset.y += 1
+	street2.motion_offset.y += 1
 
 
 
@@ -32,18 +34,22 @@ func _on_button_jugar_pressed():
 
 
 func _on_button_credits_pressed():
-	pass # Replace with function body.
+	print(\"boca boca\")
 
 
 func _on_texture_button_music_toggled(button_pressed):
-	pass # Replace with function body.
+	print(button_pressed)
 
 
 func _on_texture_button_collects_pressed():
 	pass # Replace with function body.
+
+
+func _on_button_pressed():
+	print(\"boca boca\")
 "
 
-[node name="Control" type="Control"]
+[node name="menuPrincipal" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,7 +61,6 @@ level_1 = "res://Scene/Level0.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
-layout_mode = 0
 offset_right = 480.0
 offset_bottom = 640.0
 
@@ -64,15 +69,24 @@ offset_bottom = 640.0
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
 z_index = 5
 z_as_relative = false
+position = Vector2(250, 0)
 motion_scale = Vector2(0.8, 0.8)
 motion_mirroring = Vector2(0, 500)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
-position = Vector2(239, 390)
+texture = ExtResource("1_2p4qw")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2"]
+z_index = 5
+z_as_relative = false
+position = Vector2(250, 500)
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(0, 500)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer2"]
 texture = ExtResource("1_2p4qw")
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -83,7 +97,6 @@ offset_bottom = 131.0
 grow_horizontal = 2
 
 [node name="Label" type="Label" parent="Panel"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -98,7 +111,6 @@ grow_vertical = 2
 text = "EVO-Delivery"
 
 [node name="Panel2" type="Panel" parent="."]
-layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -112,7 +124,6 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel2"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -126,7 +137,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ButtonJugar" type="Button" parent="Panel2/VBoxContainer"]
-layout_mode = 2
+offset_left = 74.0
+offset_right = 132.0
+offset_bottom = 31.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "JUGAR"
@@ -134,15 +147,19 @@ text = "JUGAR"
 [node name="HSeparator" type="HSeparator" parent="Panel2/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(1, 1, 1, 0)
-layout_mode = 2
+offset_top = 35.0
+offset_right = 207.0
+offset_bottom = 39.0
 
 [node name="ButtonCredits" type="Button" parent="Panel2/VBoxContainer"]
-layout_mode = 2
+offset_left = 61.0
+offset_top = 43.0
+offset_right = 146.0
+offset_bottom = 74.0
 size_flags_horizontal = 4
 text = "CREDITOS"
 
 [node name="Panel3" type="Panel" parent="."]
-layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
@@ -151,36 +168,61 @@ anchor_bottom = 0.5
 offset_left = -93.0
 offset_top = -106.0
 offset_right = -23.0
-offset_bottom = 20.0
+offset_bottom = 36.0
 grow_horizontal = 0
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel3"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -34.5
-offset_top = -56.5
-offset_right = 34.5
-offset_bottom = 56.5
+offset_left = -27.0
+offset_top = -53.5
+offset_right = 27.0
+offset_bottom = 53.5
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureButtonMusic" type="TextureButton" parent="Panel3/VBoxContainer"]
-layout_mode = 2
+offset_left = 2.0
+offset_right = 52.0
+offset_bottom = 50.0
 size_flags_horizontal = 4
+toggle_mode = true
 texture_normal = ExtResource("1_j7sr3")
 texture_pressed = ExtResource("2_ydy2a")
 
-[node name="TextureButtonCollects" type="TextureButton" parent="Panel3/VBoxContainer"]
-layout_mode = 2
+[node name="HSeparator" type="HSeparator" parent="Panel3/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1, 1)
+offset_top = 54.0
+offset_right = 54.0
+offset_bottom = 58.0
+size_flags_stretch_ratio = 2.19
+
+[node name="Button" type="Button" parent="Panel3/VBoxContainer"]
+offset_left = 2.0
+offset_top = 62.0
+offset_right = 52.0
+offset_bottom = 116.0
 size_flags_horizontal = 4
-texture_normal = ExtResource("3_fjqx0")
+size_flags_vertical = 4
+text = "           
+          "
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel3/VBoxContainer/Button"]
+position = Vector2(26, 27)
+scale = Vector2(0.014, 0.014)
+texture = ExtResource("4_nu1i8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(250, 321)
+current = true
+drag_vertical_enabled = true
 
 [connection signal="pressed" from="Panel2/VBoxContainer/ButtonJugar" to="." method="_on_button_jugar_pressed"]
 [connection signal="pressed" from="Panel2/VBoxContainer/ButtonCredits" to="." method="_on_button_credits_pressed"]
 [connection signal="toggled" from="Panel3/VBoxContainer/TextureButtonMusic" to="." method="_on_texture_button_music_toggled"]
-[connection signal="pressed" from="Panel3/VBoxContainer/TextureButtonCollects" to="." method="_on_texture_button_collects_pressed"]
+[connection signal="pressed" from="Panel3/VBoxContainer/Button" to="." method="_on_button_pressed"]

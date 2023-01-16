@@ -182,6 +182,7 @@ libraries = {
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(0, -8.44163)
 scale = Vector2(0.05, 0.05)
+emitting = false
 amount = 200
 process_material = SubResource("ParticleProcessMaterial_wgs8r")
 one_shot = true
