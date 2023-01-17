@@ -51,6 +51,7 @@ func dir_input(direction:Vector2) -> Vector2:
 	return direction
 
 func aplicarEvolucion(evolucion:String):
+	DataPlayer.setPoderActual(evolucion)
 	match evolucion:
 		"Hielo":
 			#el player se transforma

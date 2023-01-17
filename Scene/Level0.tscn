@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7welckr4voo8"]
+[gd_scene load_steps=7 format=3 uid="uid://c7welckr4voo8"]
 
 [ext_resource type="PackedScene" uid="uid://c5xqv7eh1f3ar" path="res://Prefabs/Items/power_evolution.tscn" id="1_5uxj7"]
 [ext_resource type="PackedScene" uid="uid://my1hs1ufupex" path="res://Prefabs/player.tscn" id="1_bjgvl"]
 [ext_resource type="PackedScene" uid="uid://dq3i21nphrx4c" path="res://Prefabs/boss_monster.tscn" id="3_lftlp"]
 [ext_resource type="PackedScene" uid="uid://bodot4cpwjxra" path="res://Prefabs/road_base.tscn" id="4_tg48m"]
 [ext_resource type="Texture2D" uid="uid://cccvqgcukmnnp" path="res://Resource/Ambiente/background.png" id="5_4oig6"]
+[ext_resource type="PackedScene" uid="uid://0ymhym4oowl5" path="res://Scene/Menu/hud.tscn" id="6_d0y57"]
 
 [node name="Level0" type="Node2D"]
 
@@ -135,11 +136,17 @@ position = Vector2(245, -1720)
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = 5
 z_as_relative = false
+texture_repeat = 3
 position = Vector2(26, -1423)
 motion_scale = Vector2(0.8, 0.8)
 motion_mirroring = Vector2(0, 1700)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 3
 position = Vector2(482, -206)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("5_4oig6")
+
+[node name="TopLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="TopLayer" instance=ExtResource("6_d0y57")]

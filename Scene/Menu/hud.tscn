@@ -1,0 +1,147 @@
+[gd_scene load_steps=7 format=3 uid="uid://0ymhym4oowl5"]
+
+[ext_resource type="Texture2D" uid="uid://b3sf5jf1fw64i" path="res://Resource/HUD/EvolutionIcon.png" id="1_022pf"]
+[ext_resource type="Script" path="res://Scene/Menu/hud.gd" id="1_jwrr2"]
+
+[sub_resource type="Animation" id="Animation_fhbn1"]
+resource_name = "aparecer"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0.06, 0.06)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ic4be"]
+resource_name = "idle"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.06, 0.06), Vector2(0.05, 0.05), Vector2(0.06, 0.06)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(8, 0.210224, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0.85098, 0.831373, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_k1s8m"]
+resource_name = "desaparecer"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.065, 0.065), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.835294, 0, 0.219608, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_net24"]
+_data = {
+"aparecer": SubResource("Animation_fhbn1"),
+"desaparecer": SubResource("Animation_k1s8m"),
+"idle": SubResource("Animation_ic4be")
+}
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jwrr2")
+
+[node name="EvoContainer" type="GridContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -38.0
+offset_top = -190.0
+offset_right = 70.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EvoContainer"]
+custom_minimum_size = Vector2(100, 10)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 10
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="EvoContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(28, -38)
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("1_022pf")
+
+[node name="evoText" type="Label" parent="EvoContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "sample"
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="EvoContainer/VBoxContainer"]
+libraries = {
+"": SubResource("AnimationLibrary_net24")
+}
+
+[connection signal="animation_finished" from="EvoContainer/VBoxContainer/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
