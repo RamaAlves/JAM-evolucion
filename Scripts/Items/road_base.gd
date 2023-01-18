@@ -1,6 +1,13 @@
 extends Area2D
 
+@onready var textureLava= $LavaTexture
+@onready var textureBase= $base
+@onready var textureRiver= $roadRiver
+@onready var textureIce= $roadIce
+@onready var textureWall= $roadWall
+
 @export var tipo=0
+
 
 var tipo_obstaculo=["base","rio_lava","lago_congelado","agua","muro"]
 
@@ -20,12 +27,19 @@ func getObstaculo(obstaculo:String):
 		"base":
 			pass
 		"rio_lava":
-			pass
+			textureBase.visible=false
+			textureLava.visible=true
 		"lago_congelado":
+			textureBase.visible=false
+			textureIce.visible=true
 			pass
 		"agua":
+			textureBase.visible=false
+			textureRiver.visible=true
 			pass
 		"muro":
+			textureBase.visible=false
+			textureWall.visible=true
 			pass
 		_:
 			pass
@@ -40,7 +54,7 @@ func _on_body_entered(body):
 	destroyObstaculo()
 
 func destroyObstaculo():
-	await get_tree().create_timer(4).timeout
+	await get_tree().create_timer(5).timeout
 	queue_free()
 	
 	

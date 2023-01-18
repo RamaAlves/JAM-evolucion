@@ -11,7 +11,7 @@
 
 [node name="PowerEvolution" parent="." instance=ExtResource("1_5uxj7")]
 position = Vector2(756, -226)
-tipoItem = 0
+tipoItem = 3
 
 [node name="PowerEvolution2" parent="." instance=ExtResource("1_5uxj7")]
 position = Vector2(254, -237)
@@ -43,9 +43,11 @@ position = Vector2(752, 746)
 
 [node name="RoadBase5" parent="StreetLevel" instance=ExtResource("4_tg48m")]
 position = Vector2(247, -740)
+tipo = 1
 
 [node name="RoadBase6" parent="StreetLevel" instance=ExtResource("4_tg48m")]
 position = Vector2(747, -740)
+tipo = 1
 
 [node name="RoadBase7" parent="StreetLevel" instance=ExtResource("4_tg48m")]
 position = Vector2(248, -250)

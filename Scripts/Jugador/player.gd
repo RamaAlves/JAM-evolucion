@@ -10,9 +10,13 @@ var izq=false
 var poder_activado=false
 var puede_saltear=""
 
+func _ready():
+	DataPlayer.activar_evolucion.connect(activarPoder)
+
 func _physics_process(_delta):
 	mov.x= direction_input().x
 	mov.y= -vel.y
+	print(vel.y)
 	move_and_collide(mov)
 
 #-----------------> Funciones player
@@ -50,6 +54,8 @@ func dir_input(direction:Vector2) -> Vector2:
 
 	return direction
 
+
+#---------->Funciones de player
 func aplicarEvolucion(evolucion:String):
 	DataPlayer.setPoderActual(evolucion)
 	match evolucion:
@@ -73,8 +79,10 @@ func aplicarEvolucion(evolucion:String):
 			pass
 
 func activarPoder():
+	print("poder activado")
 	poder_activado=true
-	await get_tree().create_timer(4).timeout
+	await get_tree().create_timer(5).timeout
+	print(puede_saltear + "  poder")
 			#sptite del poder
 	puede_saltear=""
 
